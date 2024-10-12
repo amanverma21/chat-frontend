@@ -9,6 +9,7 @@ const Chat = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
+    
     socket.on('connect', () => {
       console.log('Socket connected:', socket.id);
     });
