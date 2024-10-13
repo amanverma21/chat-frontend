@@ -1,0 +1,69 @@
+/* Auth.css */
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f7fa;
+}
+
+.auth-left {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 40px;
+}
+
+.auth-left h1 {
+  font-size: 2.5rem;
+}
+
+.auth-left p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.auth-right {
+  background-color: white;
+  padding: 40px;
+  flex: 1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-right h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.auth-right input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.auth-right button {
+  padding: 10px 20px;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.auth-right button:hover {
+  background: linear-gradient(to right, #43e97b, #38f9d7);
+}

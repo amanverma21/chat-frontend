@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -25,5 +24,28 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  return <AuthContext.Provider value={{ user, setUser }}>{children}</AuthContext.Provider>;
+  const signup = async (username, email, password) => {
+    try {
+      const response = await axios.post('http://localhost:1337/api/auth/local/register', {
+        username,
+        email,
+        password,
+      });
+      localStorage.setItem('token', response.data.jwt);
+      setUser(response.data.user);
+    } catch (error) {
+      console.error('Signup error:', error);
+    }
+  };
+
+  const logout = () => {
+    localStorage.removeItem('token');
+    setUser(null);
+  };
+
+  return (
+    <AuthContext.Provider value={{ user, setUser, signup, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
 };

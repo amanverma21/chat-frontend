@@ -1,65 +1,93 @@
-.chat-container {
+/* Chat.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f7fa;
+  }
+  
+  .chat-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 100%;
-    background-color: #ece5dd;
+    justify-content: space-between;
   }
   
   .messages {
-    flex: 1;
     padding: 20px;
-    overflow-y: scroll;
+    overflow-y: auto;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
   }
   
-  .message {
-    display: flex;
-    flex-direction: column;
-    background-color: #dcf8c6;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 60%;
+  /* Styling for sent messages */
+  .message.sent {
+    align-self: flex-end;
+    background-color: #6c5ce7; /* Purple for sent messages */
+    color: white;
+  }
+  
+  .message.received {
     align-self: flex-start;
+    background-color: #e1e3e6; /* Gray for received messages */
+    color: #333;
   }
   
-  .message .author {
+  
+  .message-content {
+    padding: 10px;
+    border-radius: 12px;
+    max-width: 60%;
+  }
+  
+  .message-content p {
+    margin: 0;
+  }
+  
+  .username {
     font-weight: bold;
+    font-size: 0.85rem;
     margin-bottom: 5px;
   }
   
-  .message.self {
-    align-self: flex-end;
-    background-color: #ffffff;
+  .timestamp {
+    font-size: 0.75rem;
+    margin-top: 5px;
+    color: #999;
+    text-align: right;
   }
   
   .input-container {
     display: flex;
     padding: 10px;
-    background-color: #ffffff;
+    background-color: white;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #ddd;
     align-items: center;
     gap: 10px;
   }
   
-  input[type='text'] {
+  input[type="text"] {
     flex: 1;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 1rem;
   }
   
   button {
-    background-color: #25d366;
-    color: #ffffff;
-    border: none;
+    background-color: #6c5ce7;
+    color: white;
     padding: 10px 20px;
-    border-radius: 20px;
+    border-radius: 25px;
+    border: none;
     cursor: pointer;
   }
   
   button:hover {
-    background-color: #128c7e;
+    background-color: #5a4cd9;
   }
   
